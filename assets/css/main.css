@@ -1,0 +1,573 @@
+* {
+    text-transform: capitalize;
+}
+
+:root {
+    --transition-1: 0.2s linear;
+    --transition-2: 0.3s linear;
+    --transition-3: 0.4s linear;
+    --box-shadow-sm: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    --box-shadow-lg: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+body {
+    overflow: hidden auto;
+}
+
+[data-bs-theme="light"] body {
+    background-color: var(--bs-gray-100);
+}
+
+i,span,svg,a {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    color: var(--bs-emphasis-color);
+}
+
+ol,ul,li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: var(--bs-emphasis-color);
+}
+
+a,
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+input{
+    text-transform: none;
+}
+
+li a,
+button a{
+    color: inherit;
+    text-decoration: none;
+}
+
+[type="email"]{
+    text-transform: lowercase;
+}
+
+::placeholder{
+    text-transform: capitalize;
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+.form-switch,
+.form-check-input{
+    cursor: pointer;
+}
+
+.btn{
+    position: relative;
+}
+
+.bg-overlay{
+    position: relative;
+}
+
+.bg-overlay::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: var(--bs-dark);
+    opacity: 0.65;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-weight: 600;
+    font-size: 2.52rem;
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+    padding: 0.5rem 1rem;
+}
+
+.img-fluid {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.flip-y{
+    transform: scaleY(-1);
+}
+
+.h-257px{
+    height: 257px;
+}
+
+.not-of{
+    color: var(--bs-gray-500);
+    text-decoration: line-through;
+}
+
+/* ============================== Main Header CSS Start ==============================*/
+.header-top .social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    color: var(--bs-success);
+    transition: color var(--transition-1), background-color var(--transition-1);
+}
+
+.header-top .social a:hover {
+    color: var(--bs-warning);
+    background-color: var(--bs-success);
+}
+
+.header-mid .btn,
+.header-mid .form-control {
+    border: 0 !important;
+    box-shadow: none !important;
+    color: var(--bs-light) !important;
+    background-color: transparent !important;
+}
+
+.header-mid .form-control::placeholder {
+    color: var(--bs-light);
+}
+
+.header-mid .search {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header-mid .search-bar {
+    position: relative;
+    z-index: 6;
+    margin: 0 auto;
+}
+
+.header-mid .search-bar {
+    position: relative;
+    z-index: 5;
+    border-radius: 0.45rem;
+}
+
+.header-mid .search-bar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    opacity: 0.12;
+    border-radius: 0.26rem;
+    background-color: var(--bs-dark-bg-subtle);
+    opacity: 0.26;
+}
+
+.header-mid .ctg-dropdown .dropdown-menu {
+    border-radius: 0;
+    padding: 0.25rem 0;
+    min-width: 11.5rem;
+    border-color: var(--bs-light-bg-subtle);
+    background-color: var(--bs-light-bg-subtle);
+}
+
+.ctg-dropdown .dropdown-menu .dropdown-item:hover {
+    color: var(--bs-light);
+    background-color: rgba(var(--bs-dark-rgb), 0.35);
+}
+
+.right-nav .shop .shop-icon {
+    margin: 0 4px;
+    padding: 8px 11px;
+    border-radius: 0.25rem;
+    color: var(--bs-warning);
+    background-color: rgba(var(--bs-dark-rgb), 0.3);
+    transition: color var(--transition-1), background-color var(--transition-1);
+}
+
+.right-nav .shop .shop-icon:hover {
+    background-color: rgba(var(--bs-dark-rgb), 0.5);
+}
+
+.right-nav .shop .shop-icon:first-child {
+    margin-left: 0;
+}
+
+.right-nav .shop .shop-icon:last-child {
+    margin-right: 0;
+}
+
+.navbar .dropdown .ctg-dropdown-menu {
+    display: block;
+    padding: 10px 0;
+    position: absolute;
+    left: 14px;
+    top: 120%;
+    min-width: 200px;
+    z-index: 95;
+    border-radius: 0.24rem;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: var(--box-shadow-sm);
+    background: var(--bs-light-bg-subtle);
+    transition: top var(--transition-2), opacity var(--transition-2), visibility var(--transition-2);
+}
+
+.navbar .dropdown .ctg-dropdown-menu a {
+    font-size: 1.13rem;
+    padding: 0.58rem 1rem;
+    text-transform: none;
+    color: var(--bs-emphasis-color);
+}
+
+.dropdown .ctg-dropdown-menu a.active,
+.dropdown .ctg-dropdown-menu a:hover {
+    color: var(--bs-white);
+    background-color: rgba(var(--bs-dark-rgb), 0.38);
+}
+
+.navbar .dropdown .dropdown-divider {
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    background-color: var(--bs-dark-bg-subtle);
+}
+
+.navbar .dropdown:hover>.ctg-dropdown-menu {
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.header-bottom.header-scroll {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--bs-success);
+    z-index: 4050;
+    animation: HeaderScroll 1.5s linear 1;
+}
+
+.navbar .dropdown-toggle::after {
+    display: none;
+}
+
+@keyframes HeaderScroll {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ============================== Main Hero CSS Start ==============================*/
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 68.85vh;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    background: url('../img/bg/hero-bg.jpg') no-repeat center center/cover;
+}
+
+/* ============================== Category CSS Start ==============================*/
+.category .ctg-item .ctg-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 8rem;
+    margin: 0 auto 0.25rem auto;
+    background-color: var(--bs-dark-bg-subtle);
+    border: 1.5px solid var(--bs-dark-bg-subtle);
+}
+
+.ctg-item .ctg-icon svg {
+    display: block;
+    font-size: 3.54rem;
+    color: var(--bs-emphasis-color);
+}
+
+/* ============================== Product CSS Start ==============================*/
+.product-item .card-header {
+    background-color: transparent;
+}
+
+.product-container {
+    padding: 0.5rem 1rem;
+    max-width: 100%;
+    overflow-x: auto;
+    border-radius: 0.24rem;
+    border: 1.5px solid rgba(var(--bs-emphasis-color-rgb), 0.24);
+}
+
+.product-item .product-img img {
+    width: 100%;
+    margin: 0 auto;
+    height: 240px;
+    object-fit: cover;
+}
+
+/* ============================== Countdown CSS Start ==============================*/
+.countdown {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    min-height: 60vh;
+    position: relative;
+}
+
+.countdown::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    background: rgba(0, 0, 0, 0.3) url('../img/bg/sec-1.jpg') no-repeat center center/cover fixed;
+    background-blend-mode: darken;
+}
+
+.countdown .count-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.countdown .count-item h5 {
+    font-weight: 700;
+    line-height: 0.978;
+    font-size: 3.35rem;
+    color: var(--bs-light);
+}
+
+.countdown .count-item p {
+    font-weight: 500;
+    font-size: 1.58rem;
+    letter-spacing: 2.5px;
+    color: var(--bs-light);
+}
+
+/* ============================== Counter CSS Start ==============================*/
+.counter {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    min-height: 60vh;
+    position: relative;
+}
+
+.counter::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    background: url('../img/bg/counter-bg.jpg') no-repeat center center/cover fixed;
+}
+
+.counter .count-item .icon svg {
+    font-size: 3.58rem;
+    margin-bottom: 9px;
+    color: var(--bs-warning);
+}
+
+.counter .count-item .count-info h5 {
+    font-weight: bold;
+    font-size: 1.74rem;
+    color: var(--bs-white);
+}
+
+.counter .count-item .count-info span {
+    text-transform: none;
+}
+
+/* ============================== FAQs CSS Start ==============================*/
+.faqs-container .accordion-item {
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow-sm);
+}
+
+.faqs-container .accordion-header .accordion-button {
+    box-shadow: none;
+    font-weight: 600;
+    font-size: 1.33rem;
+    user-select: none;
+    background-color: rgba(var(--bs-secondary-rgb), 0.2);
+}
+
+.accordion-button h5 {
+    font-size: inherit;
+}
+
+.accordion-button:not(.collapsed) {
+    font-weight: bold;
+    color: var(--bs-success);
+}
+
+/* ============================== Testimonials CSS Start ==============================*/
+.testimonials-item {
+    padding: 10px 20px;
+    border-right: 0.25rem;
+    box-shadow: var(--box-shadow-sm);
+    border-left: 3px solid var(--bs-warning);
+    background-color: var(--bs-success-bg-subtle);
+}
+
+.testimonials-item .testimonials-client {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-top: 1.5px solid var(--bs-emphasis-color);
+}
+
+/* ============================== Footer CSS Start ==============================*/
+.footer-links h4 {
+    font-weight: 600;
+    font-size: 1.12rem;
+    margin-bottom: 15px;
+    color: var(--bs-success);
+}
+
+.footer-links ul li {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.footer-links ul li:first-child {
+    margin-top: 0;
+}
+
+.footer-links ul a {
+    font-weight: 500;
+    color: rgba(var(--bs-emphasis-color-rgb), 0.64);
+    transition: color var(--transition-2);
+}
+
+.footer-links ul a:hover {
+    color: var(--bs-success);
+}
+
+.footer-copyright .icon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 3.44rem;
+    color: var(--bs-success);
+    box-shadow: var(--box-shadow-lg);
+    background-color: var(--bs-white);
+    border: 1.5px solid var(--bs-white);
+    transition: color var(--transition-1), border-color var(--transition-1), background-color var(--transition-1);
+}
+
+.footer-copyright .icon a:hover {
+    color: var(--bs-white);
+    border-color: var(--bs-primary);
+    background-color: var(--bs-primary);
+}
+
+/* ============================== Media Query Start ==============================*/
+@media screen and (max-width: 767px) {
+
+    ::before,
+    ::after {
+        background-attachment: unset;
+    }
+
+    .header-mid .web-logo img {
+        display: block;
+        width: 200px !important;
+        margin: 0 auto;
+    }
+
+    .header-mid .right-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-mid .search {
+        width: 100% !important;
+    }
+
+    .header-mid .search .ctg-dropdown {
+        display: none;
+    }
+
+    .header-mid .search form {
+        width: 100% !important;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+
+    .countdown {
+        padding: 0px 0.5rem !important;
+    }
+
+    .navbar .dropdown .ctg-dropdown-menu {
+        position: relative;
+        top: 34px;
+        transition: none;
+        display: none;
+        top: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar .dropdown .ctg-dropdown-menu.toggle-menu {
+        display: block;
+    }
+}
